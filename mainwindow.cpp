@@ -17,10 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     Room a(t.arg("cucumbers")), b(t.arg("tomtatoes")),
         c(t.arg("potatoes"));
 
-    a.adjacent[Room::EAST] = &b;
-    b.adjacent[Room::WEST] = &a;
-    b.adjacent[Room::SOUTH] = &c;
-    c.adjacent[Room::NORTH] = &b;
+    a.bind(&b, Room::EAST);
+    b.bind(&c, Room::SOUTH);
 
     Knight knight(&a);
     Dragon d[3];

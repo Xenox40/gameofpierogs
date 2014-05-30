@@ -1,8 +1,8 @@
 #ifndef HERO_H
 #define HERO_H
 
-#include "enemy.h"
 #include "room.h"
+#include "enemy.h"
 
 class Hero : public Character
 {
