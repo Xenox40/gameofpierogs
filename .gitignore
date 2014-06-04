@@ -3,3 +3,4 @@ gameofpierogs
 moc_*
 ui_*
 *.o
+.*.swp
