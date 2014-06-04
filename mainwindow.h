@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QList>
 #include <QMainWindow>
+#include <QPushButton>
+
 #include "world.h"
 
 namespace Ui {
@@ -18,6 +21,9 @@ public:
 
 protected:
     World world;
+    void synchronize();
+
+    QList<QPushButton*> buttonByDir;
 
 private:
     Ui::MainWindow *ui;
