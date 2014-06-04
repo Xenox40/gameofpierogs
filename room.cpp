@@ -6,6 +6,8 @@ using namespace std;
 Room::Room(QString _description) : description(_description)
 {
     qRegisterMetaType<Room::Direction>("Direction");
+    for(int i=0; i<4; ++i)
+        adjacent[i] = 0;
 }
 
 QString Room::getDescription() const {
