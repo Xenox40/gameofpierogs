@@ -8,8 +8,6 @@ class Knight : public Hero
 public:
     Knight(Room* position);
 
-    void fight(Enemy *);
-
     QString introduceYourself() const;
 };
 

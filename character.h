@@ -15,6 +15,9 @@ public:
     bool isDead() const;
     int getHealth() const;
 
+    // takes the power of attack, changes health and
+    // returns injury to the aggressor
+    virtual int defense(int power)=0;
 
 };
 

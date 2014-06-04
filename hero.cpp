@@ -30,3 +30,9 @@ void Hero::move(Room *newPosition)
 {
     position = newPosition;
 }
+
+int Hero::defense(int)
+{
+    health = 0;
+    return 0;
+}

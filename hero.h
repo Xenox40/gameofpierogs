@@ -20,6 +20,8 @@ public:
 
     Room* getPosition();
 
+    int defense(int power);
+
 protected:
     void move(Room*);
 };

@@ -9,8 +9,6 @@ protected:
     Enemy(int _health);
 
 public:
-    // takes the power of attack, changes health and 
-    // returns injury to the aggressor
     int defense(int power);
 };
 
