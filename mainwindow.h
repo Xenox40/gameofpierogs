@@ -22,6 +22,7 @@ public:
 protected:
     World world;
     void synchronize();
+    void moveHero(Room::Direction dir);
 
     QList<QPushButton*> buttonByDir;
 
