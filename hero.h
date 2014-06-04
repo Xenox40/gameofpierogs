@@ -14,9 +14,14 @@ public:
     Hero(Room *_position, int _health, int _power);
 
     void attack(Enemy*);
-    void move(Room*);
+
+    bool canMove(Room::Direction) const;
+    void move(Room::Direction);
+
     Room* getPosition();
 
+protected:
+    void move(Room*);
 };
 
 #endif // HERO_H

@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     character.cpp \
     enemy.cpp \
     knight.cpp \
-	dragon.cpp
+	dragon.cpp \
+    world.cpp
 
 HEADERS  += mainwindow.h \
     hero.h \
@@ -27,6 +28,7 @@ HEADERS  += mainwindow.h \
     character.h \
     enemy.h \
     knight.h \
-	dragon.h
+	dragon.h \
+    world.h
 
 FORMS    += mainwindow.ui

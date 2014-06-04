@@ -11,12 +11,22 @@ void Hero::attack(Enemy *enemy)
     health -= injury;
 }
 
-void Hero::move(Room *newPosition)
+bool Hero::canMove(Room::Direction dir) const
 {
-    position = newPosition;
+    return position->getNeighbour(dir) != 0;
+}
+
+void Hero::move(Room::Direction dir)
+{
+    move(position->getNeighbour(dir));
 }
 
 Room* Hero::getPosition()
 {
     return position;
+}
+
+void Hero::move(Room *newPosition)
+{
+    position = newPosition;
 }
