@@ -2,7 +2,6 @@
 #define HERO_H
 
 #include "room.h"
-#include "enemy.h"
 
 class Hero : public Character
 {
@@ -13,14 +12,12 @@ protected:
 public:
     Hero(Room *_position, int _health, int _power);
 
-    void attack(Enemy*);
+    void attack(Character*);
 
     bool canMove(Room::Direction) const;
     void move(Room::Direction);
 
     Room* getPosition();
-
-    int defense(int power);
 
 protected:
     void move(Room*);

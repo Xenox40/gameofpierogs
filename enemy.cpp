@@ -5,7 +5,7 @@ using namespace std;
 
 Enemy::Enemy(int _health) : Character(_health) {}
 
-int Enemy::defense(int power)
+int Enemy::defendYourself(int power)
 {
     int copyHealth = health;
     health -= power;

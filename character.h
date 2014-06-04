@@ -17,7 +17,7 @@ public:
 
     // takes the power of attack, changes health and
     // returns injury to the aggressor
-    virtual int defense(int power)=0;
+    virtual int defendYourself(int power);
 
 };
 

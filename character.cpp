@@ -12,4 +12,8 @@ int Character::getHealth() const
     return health;
 }
 
-
+int Character::defendYourself(int)
+{
+    health = 0;
+    return 0;
+}

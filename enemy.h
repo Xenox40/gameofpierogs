@@ -9,7 +9,7 @@ protected:
     Enemy(int _health);
 
 public:
-    int defense(int power);
+    int defendYourself(int power);
 };
 
 #endif // ENEMY_H

@@ -5,9 +5,9 @@ Hero::Hero(Room *_position, int _health, int _power)
 {
 }
 
-void Hero::attack(Enemy *enemy)
+void Hero::attack(Character *character)
 {
-    int injury = enemy->defense(power);
+    int injury = character->defendYourself(power);
     health -= injury;
 }
 
@@ -29,10 +29,4 @@ Room* Hero::getPosition()
 void Hero::move(Room *newPosition)
 {
     position = newPosition;
-}
-
-int Hero::defense(int)
-{
-    health = 0;
-    return 0;
 }
