@@ -50,10 +50,17 @@ void MainWindow::synchronize()
     auto content = world.currentRoom()->getContent();
     enemies->setRowCount(content.size());
     for(int i=0; i<content.size(); ++i) {
-        enemies->setItem(i, 0, new QStandardItem(
-            content[i]->introduceYourself()));
-        enemies->setItem(i, 1, new QStandardItem(
-            QString::number(content[i]->getHealth())));
+        QStringList data = {
+            content[i]->introduceYourself(), 
+            QString::number(content[i]->getHealth())
+        };
+
+        for(int k=0; k<2; ++k) {
+            auto item = new QStandardItem(data[k]);
+            item->setEditable(false);
+            enemies->setItem(i, k, item);
+        }
+
         auto button = new QPushButton("Charge!");
         auto index = enemies->index(i, 2);
         ui->enemies->setIndexWidget(index, button);
