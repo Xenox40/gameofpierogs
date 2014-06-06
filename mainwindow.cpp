@@ -54,6 +54,9 @@ void MainWindow::synchronize()
             content[i]->introduceYourself()));
         enemies->setItem(i, 1, new QStandardItem(
             QString::number(content[i]->getHealth())));
+        auto button = new QPushButton("Charge!");
+        auto index = enemies->index(i, 2);
+        ui->enemies->setIndexWidget(index, button);
     }
 
     ui->enemies->resizeColumnsToContents();
