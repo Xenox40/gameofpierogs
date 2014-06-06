@@ -63,6 +63,8 @@ void MainWindow::synchronize()
 
         auto button = new QPushButton("Charge!");
         auto index = enemies->index(i, 2);
+        connect(button, &QPushButton::clicked,
+            [=](){ world.getHero()->attack(content[i]); synchronize(); });
         ui->enemies->setIndexWidget(index, button);
     }
 
