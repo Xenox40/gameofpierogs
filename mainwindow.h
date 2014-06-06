@@ -4,6 +4,7 @@
 #include <QList>
 #include <QMainWindow>
 #include <QPushButton>
+#include <QStandardItemModel>
 
 #include "world.h"
 
@@ -25,6 +26,7 @@ protected:
     void moveHero(Room::Direction dir);
 
     QList<QPushButton*> buttonByDir;
+    QStandardItemModel* enemies;
 
 private:
     Ui::MainWindow *ui;

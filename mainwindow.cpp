@@ -16,6 +16,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    enemies = new QStandardItemModel;
+    QStringList enemiesLabels = { "Name", "Health", "Attack" };
+    enemies->setHorizontalHeaderLabels(enemiesLabels);
+    ui->enemies->setModel(enemies);
+
     buttonByDir = { ui->north, ui->west, ui->south, ui->east };
     synchronize();
 
@@ -40,6 +46,13 @@ void MainWindow::synchronize()
     ui->roomName->setText(world.currentRoom()->getDescription());
     ui->health->setText(QString::number(world.getHero()->getHealth()));
     ui->name->setText(world.getHero()->introduceYourself());
+
+    auto content = world.currentRoom()->getContent();
+    enemies->setRowCount(content.size());
+    for(int i=0; i<content.size(); ++i) {
+        enemies->setItem(i, 0, new QStandardItem(content[i]->introduceYourself()));
+        enemies->setItem(i, 1, new QStandardItem(QString::number(content[i]->getHealth())));
+    }
 }
 
 void MainWindow::moveHero(Room::Direction dir)
