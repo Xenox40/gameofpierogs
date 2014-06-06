@@ -55,6 +55,8 @@ void MainWindow::synchronize()
         enemies->setItem(i, 1, new QStandardItem(
             QString::number(content[i]->getHealth())));
     }
+
+    ui->enemies->resizeColumnsToContents();
 }
 
 void MainWindow::moveHero(Room::Direction dir)
