@@ -50,8 +50,10 @@ void MainWindow::synchronize()
     auto content = world.currentRoom()->getContent();
     enemies->setRowCount(content.size());
     for(int i=0; i<content.size(); ++i) {
-        enemies->setItem(i, 0, new QStandardItem(content[i]->introduceYourself()));
-        enemies->setItem(i, 1, new QStandardItem(QString::number(content[i]->getHealth())));
+        enemies->setItem(i, 0, new QStandardItem(
+            content[i]->introduceYourself()));
+        enemies->setItem(i, 1, new QStandardItem(
+            QString::number(content[i]->getHealth())));
     }
 }
 
