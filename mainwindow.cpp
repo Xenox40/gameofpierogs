@@ -69,6 +69,7 @@ void MainWindow::synchronize()
     }
 
     ui->enemies->resizeColumnsToContents();
+    ui->enemies->horizontalHeader()->reset();
 }
 
 void MainWindow::moveHero(Room::Direction dir)
