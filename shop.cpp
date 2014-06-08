@@ -1,7 +1,8 @@
 #include "shop.h"
 #include "ui_shop.h"
 
-Shop::Shop(QWidget *parent) :
+Shop::Shop(World* _w, QWidget *parent) :
+    w(_w),
     QWidget(parent),
     ui(new Ui::Shop)
 {

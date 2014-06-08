@@ -13,6 +13,7 @@
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
+    shop(&world),
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -81,9 +82,9 @@ void MainWindow::moveHero(Room::Direction dir)
 
 void MainWindow::on_pushButton_clicked()
 {
-    s.show();
-    s.raise();
-    s.activateWindow();
+    shop.show();
+    shop.raise();
+    shop.activateWindow();
     synchronize();
 
 }

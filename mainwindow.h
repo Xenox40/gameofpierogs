@@ -23,7 +23,7 @@ public:
 
 protected:
     World world;
-    Shop s;
+    Shop shop;
     void synchronize();
     void moveHero(Room::Direction dir);
 

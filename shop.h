@@ -16,7 +16,7 @@ protected:
     World* w;
 
 public:
-    explicit Shop(QWidget *parent = 0);
+    explicit Shop(World* _w, QWidget *parent = 0);
     ~Shop();
 
 private slots:
