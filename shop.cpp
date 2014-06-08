@@ -16,6 +16,6 @@ Shop::~Shop()
 void Shop::on_pushButton_clicked()
 {
     w = new World();
-    w->getHero()->setShield(false);
+    w->getHero()->setShield(true);
     qDebug() << w->getHero()->getShield();
 }

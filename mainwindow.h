@@ -7,6 +7,7 @@
 #include <QStandardItemModel>
 
 #include "world.h"
+#include "shop.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +23,7 @@ public:
 
 protected:
     World world;
+    Shop s;
     void synchronize();
     void moveHero(Room::Direction dir);
 

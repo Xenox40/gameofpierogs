@@ -13,8 +13,6 @@ void Hero::attack(Character *character)
     else
         health -= injury;
 
-    if(health <25)
-        shield = false;
 }
 
 bool Hero::canMove(Room::Direction dir) const

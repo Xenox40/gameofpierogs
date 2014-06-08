@@ -9,7 +9,6 @@
 #include "dragon.h"
 #include "knight.h"
 #include "room.h"
-#include "shop.h"
 
 using namespace std;
 
@@ -82,13 +81,9 @@ void MainWindow::moveHero(Room::Direction dir)
 
 void MainWindow::on_pushButton_clicked()
 {
-    Shop s;
     s.show();
-
-    QEventLoop loop;
-    connect(this, SIGNAL(destroyed()), & loop, SLOT(deleteLater()));
-    loop.exec();
-    qDebug() << world.getHero()->getShield();
+    s.raise();
+    s.activateWindow();
     synchronize();
 
 }
