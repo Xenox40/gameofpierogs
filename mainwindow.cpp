@@ -1,6 +1,7 @@
 #include <functional>
 
 #include <QDebug>
+#include <QEventLoop>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -8,6 +9,7 @@
 #include "dragon.h"
 #include "knight.h"
 #include "room.h"
+#include "shop.h"
 
 using namespace std;
 
@@ -76,4 +78,17 @@ void MainWindow::moveHero(Room::Direction dir)
 {
     world.getHero()->move(dir);
     synchronize();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    Shop s;
+    s.show();
+
+    QEventLoop loop;
+    connect(this, SIGNAL(destroyed()), & loop, SLOT(deleteLater()));
+    loop.exec();
+    qDebug() << world.getHero()->getShield();
+    synchronize();
+
 }

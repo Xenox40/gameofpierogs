@@ -8,9 +8,10 @@ class Hero : public Character
 protected:
     Room *position;
     int power;
+    bool shield;
 
 public:
-    Hero(Room *_position, int _health, int _power);
+    Hero(Room *_position, int _health, int _power, bool _shield);
 
     void attack(Character*);
 
@@ -18,6 +19,9 @@ public:
     void move(Room::Direction);
 
     Room* getPosition();
+
+    void setShield(bool s);
+    bool getShield();
 
 protected:
     void move(Room*);

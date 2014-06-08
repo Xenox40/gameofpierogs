@@ -1,14 +1,20 @@
 #include "hero.h"
 
-Hero::Hero(Room *_position, int _health, int _power)
-    : Character(_health), position(_position), power(_power)
+Hero::Hero(Room *_position, int _health, int _power, bool _shield)
+    : Character(_health), position(_position), power(_power), shield(_shield)
 {
 }
 
 void Hero::attack(Character *character)
 {
     int injury = character->defendYourself(power);
-    health -= injury;
+    if(shield == true)
+        health -= injury / 2;
+    else
+        health -= injury;
+
+    if(health <25)
+        shield = false;
 }
 
 bool Hero::canMove(Room::Direction dir) const
@@ -29,4 +35,14 @@ Room* Hero::getPosition()
 void Hero::move(Room *newPosition)
 {
     position = newPosition;
+}
+
+void Hero::setShield(bool s)
+{
+    shield = s;
+}
+
+bool Hero::getShield()
+{
+    return shield;
 }
