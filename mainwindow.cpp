@@ -1,7 +1,6 @@
 #include <functional>
 
 #include <QDebug>
-#include <QEventLoop>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -85,6 +84,4 @@ void MainWindow::on_pushButton_clicked()
     shop.show();
     shop.raise();
     shop.activateWindow();
-    synchronize();
-
 }

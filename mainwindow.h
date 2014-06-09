@@ -19,12 +19,12 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void synchronize();
     ~MainWindow();
 
 protected:
     World world;
     Shop shop;
-    void synchronize();
     void moveHero(Room::Direction dir);
 
     QList<QPushButton*> buttonByDir;

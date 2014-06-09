@@ -1,5 +1,6 @@
 #include "shop.h"
 #include "ui_shop.h"
+#include "mainwindow.h"
 
 Shop::Shop(World* _w, QWidget *parent) :
     w(_w),
@@ -16,7 +17,7 @@ Shop::~Shop()
 
 void Shop::on_pushButton_clicked()
 {
-    w = new World();
     w->getHero()->setShield(true);
-    qDebug() << w->getHero()->getShield();
+    MainWindow main;
+    main.synchronize();
 }
